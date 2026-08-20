@@ -3,11 +3,11 @@
 # SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
 # IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
 # SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
-# Start of session at: Wed Aug 19 21:22:26 2026
-# Process ID         : 10616
+# Start of session at: Wed Aug 19 22:27:01 2026
+# Process ID         : 9248
 # Current directory  : C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.runs/synth_1
-# Command line       : vivado.exe -log control.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source control.tcl
-# Log file           : C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.runs/synth_1/control.vds
+# Command line       : vivado.exe -log cpu.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu.tcl
+# Log file           : C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.runs/synth_1/cpu.vds
 # Journal file       : C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.runs/synth_1\vivado.jou
 # Running On         : Nexus
 # Platform           : Windows 11
@@ -19,6 +19,6 @@
 # Host memory        : 33408 MB
 # Swap memory        : 18253 MB
 # Total Virtual      : 51662 MB
-# Available Virtual  : 28884 MB
+# Available Virtual  : 27629 MB
 #-----------------------------------------------------------
-source control.tcl -notrace
+source cpu.tcl -notrace
