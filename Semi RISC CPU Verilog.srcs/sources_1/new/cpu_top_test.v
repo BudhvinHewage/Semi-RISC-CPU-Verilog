@@ -6,7 +6,8 @@ module cpu_top_test(
     output out_c, out_z,
     output [31:0] out_ir, out_pc, out_bus,
     output [2:0]  t_info,
-    output [31:0] out_alu
+    output [31:0] out_alu,
+    output test_signal
 );
     wire [31:0] cpu_to_mem, mem_to_cpu, addr_from_cpu;
     wire wen_mem_dbg, en_mem_dbg;
@@ -28,8 +29,8 @@ module cpu_top_test(
         .dout_ir(out_ir), .dout_pc(out_pc),
         .out_t(t_info),
         .wen_mem(wen_mem_dbg), .en_mem(en_mem_dbg),
-        .dout_alu(out_alu)
+        .dout_alu(out_alu), .test_signal(test_signal)
     );
     
-    assign out_bus = cpu_to_mem;
+    assign out_bus = mem_to_cpu;
 endmodule

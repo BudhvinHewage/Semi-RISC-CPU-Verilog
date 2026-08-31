@@ -16,7 +16,8 @@ module cpu(
     output [2:0]  out_t,
     output        wen_mem,
     output        en_mem,
-    output [31:0] dout_alu
+    output [31:0] dout_alu,
+    output test_signal
 );
 
     wire dp_mux1, dp_clr_a, dp_ld_a, dp_clr_b, dp_ld_b, dp_clr_c, dp_ld_c;
@@ -69,5 +70,6 @@ module cpu(
     assign dout_z  = out_z;
     assign dout_ir = out_ir_sig;
     assign wen_mem = mem_wen;   
-    assign en_mem  = mem_en;    
+    assign en_mem  = mem_en;  
+    assign test_signal = dp_ld_a;  
 endmodule

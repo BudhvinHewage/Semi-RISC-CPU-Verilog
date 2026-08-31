@@ -133,52 +133,52 @@ module control(
 
                         4'b0111: begin // Data-processing instructions
                             case (instruction_sig2)
-                                8'h00: begin // ADD: A <= A+B
+                                8'h70: begin // ADD: A <= A+B
                                     im_mux2=2'b00; alu_op=ALU_ADD;
                                     data_mux=2'b10; ld_a=1'b1;
                                 end
-                                8'h01: begin // ADDI: A <= A+IR[15:0]
+                                8'h71: begin // ADDI: A <= A+IR[15:0]
                                     im_mux2=2'b01; alu_op=ALU_ADD;
                                     data_mux=2'b10; ld_a=1'b1;
                                 end
-                                8'h02: begin // SUB: A <= A-B
+                                8'h72: begin // SUB: A <= A-B
                                     im_mux2=2'b00; alu_op=ALU_SUB;
                                     data_mux=2'b10; ld_a=1'b1;
                                 end
-                                8'h03: begin // INCA: A <= A+1
+                                8'h73: begin // INCA: A <= A+1
                                     im_mux2=2'b10; alu_op=ALU_ADD;
                                     data_mux=2'b10; ld_a=1'b1;
                                 end
-                                8'h04: begin // ROL: A <= A<<1
+                                8'h74: begin // ROL: A <= A<<1
                                     alu_op=ALU_SHL; data_mux=2'b10; ld_a=1'b1;
                                 end
-                                8'h05: clr_a=1'b1;                     // CLRA
-                                8'h06: clr_b=1'b1;                     // CLRB
-                                8'h07: clr_c=1'b1;                     // CLRC
-                                8'h08: clr_z=1'b1;                     // CLRZ
-                                8'h09: begin // ANDI: A <= A AND IR[15:0]
+                                8'h75: clr_a=1'b1;                     // CLRA
+                                8'h76: clr_b=1'b1;                     // CLRB
+                                8'h77: clr_c=1'b1;                     // CLRC
+                                8'h78: clr_z=1'b1;                     // CLRZ
+                                8'h79: begin // ANDI: A <= A AND IR[15:0]
                                     im_mux2=2'b01; alu_op=ALU_AND;
                                     data_mux=2'b10; ld_a=1'b1;
                                 end
-                                8'h0A: begin // TSTZ: if Z, skip next instr
+                                8'h7A: begin // TSTZ: if Z, skip next instr
                                     if (status_z) begin ld_pc=1'b1; inc_pc=1'b1; end
                                 end
-                                8'h0B: begin // AND: A <= A AND B
+                                8'h7B: begin // AND: A <= A AND B
                                     im_mux2=2'b00; alu_op=ALU_AND;
                                     data_mux=2'b10; ld_a=1'b1;
                                 end
-                                8'h0C: begin // TSTC: if C, skip next instr
+                                8'h7C: begin // TSTC: if C, skip next instr
                                     if (status_c) begin ld_pc=1'b1; inc_pc=1'b1; end
                                 end
-                                8'h0D: begin // ORI: A <= A OR IR[15:0]
+                                8'h7D: begin // ORI: A <= A OR IR[15:0]
                                     im_mux2=2'b01; alu_op=ALU_OR;
                                     data_mux=2'b10; ld_a=1'b1;
                                 end
-                                8'h0E: begin // DECA: A <= A-1
+                                8'h7E: begin // DECA: A <= A-1
                                     im_mux2=2'b10; alu_op=ALU_SUB;
                                     data_mux=2'b10; ld_a=1'b1;
                                 end
-                                8'h0F: begin // ROR: A <= A>>1
+                                8'h7F: begin // ROR: A <= A>>1
                                     alu_op=ALU_SHR; data_mux=2'b10; ld_a=1'b1;
                                 end
                                 default: ;
