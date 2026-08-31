@@ -97,6 +97,7 @@ existing gap in the design, not a simulation problem.
 | SW3 | Display IR |
 | SW4 | Display status C |
 | SW5 | Display status Z |
+| SW6 | Display ALU |
 | LD0 / LD1 / LD2 | Always on — lit for T0 / T1 / T2, regardless of SW |
 
 Only one of SW0–SW5 should be on at a time — SW0 wins if more than one is

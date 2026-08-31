@@ -1,9 +1,9 @@
-# Verilog Multi-Cycle CPU
+# Semi-RISC CPU (Verilog)
 
 A from-scratch Verilog redesign of a 26-instruction, multi-cycle CPU architecture,
 rebuilt from an earlier VHDL coursework implementation to properly re-derive the
 control and datapath logic rather than transliterate it. Targets the Digilent
-Basys 3 (Artix-7), built and simulated in Vivado.
+Basys 3 (Artix-7); simulated in Vivado and running on real hardware.
 
 ## Architecture
 
@@ -14,9 +14,9 @@ status flags. Every instruction executes in exactly three clock cycles — T0
 (execute) — driven by a Moore FSM in the control unit.
 
 ```
-cpu1 (top)
+cpu (top)
 ├── reset_circuit — holds the FSM idle for 4 cycles after reset deasserts
-├── control_new    — T0/T1/T2 FSM, decodes IR into ~20 datapath control signals
+├── control        — T0/T1/T2 FSM, decodes IR into ~20 datapath control signals
 └── data_path
     ├── register32 (x2)  — A, B
     ├── register1 (x2)   — C, Z status flags
@@ -101,33 +101,57 @@ matters of style, matters of missing functionality:
 
 ## Simulation
 
-`instr_mem` is loaded via `$readmemh("program.hex", mem)` at simulation
-start — no vendor RAM IP, unlike the original Quartus MegaCore dependency.
-`cpu_top_test.v` wires `cpu1` + `instr_mem` together (instruction address
-truncated to the memory's 6-bit width; nothing in this ISA writes program
-memory at runtime, so `wren` is tied low). `tb_cpu_top.v` drives reset and
-lets the program run.
+`instr_mem` is loaded via `$readmemh("program.hex", mem)` — no vendor RAM
+IP, unlike the original Quartus MegaCore dependency. `cpu_top_test.v` wires
+`cpu` + `instr_mem` together for simulation (instruction address truncated
+to the memory's 6-bit width; nothing in this ISA writes program memory at
+runtime, so `wren` is tied low). `tb_cpu_top.v` drives reset and lets the
+program run.
 
-Verified in simulation, with a program specifically designed to prove
-correctness rather than just "something happened":
-- Memory read/write persistence — write A to memory, deliberately overwrite
-  A, read it back, confirm the original value returns.
-- Conditional branching — set up a taken `BEQ`, place a "poison" instruction
-  immediately after the branch that should never execute if the jump works.
+Verified in simulation, with programs specifically designed to prove
+correctness rather than just "something happened": memory read/write
+persistence (write, deliberately overwrite, read back), conditional
+branching with a "poison value" that must never execute if a branch is
+taken correctly, and round-trip checks across every arithmetic/logic
+instruction (e.g. `ADD` then `SUB` returning to the original value). See
+`TESTING.md` for the full program and expected-value table.
 
-Both proofs pass. Individually exercised: `LDAI`, `LDBI`, `ADD`, `STA`,
-`LDA`, `BEQ`, `Reg_Z`. Not yet individually exercised in simulation (same
-mechanism as proven instructions, lower risk, but untested): `BNE`,
-`SUB`/`AND`/`OR`/shifts/`INCA`/`DECA`, `STB`/`LDB`, `LUI`,
-`TSTZ`/`TSTC`/`CLRZ`/`CLRC`.
+## Hardware bring-up
+
+`cpu_basys3_top.v` + `sseg_display.v` + `basys3.xdc` target real hardware.
+`mem_clk` runs off the board's native 100MHz oscillator; `clk` is driven by
+a manually-stepped pushbutton (`BTNC`) — one press advances the FSM by
+exactly one T-state, giving full manual control for observing each phase.
+`SW0`–`SW5` (soon `SW0`–`SW6`, once the port-width fix above lands) select
+which internal signal is shown across the 4-digit 7-segment display and 16
+LEDs; `LD0`–`LD2` permanently mirror the current T-state regardless of what
+else is selected. Full control scheme
+and step-by-step verification walkthrough in `TESTING.md`.
+
+**Real bug hit and fixed during bring-up, worth keeping as a debugging
+story:** `program.hex` initially only lived in Vivado's Simulation Sources
+fileset. XSim could see it fine, so simulation worked correctly — but
+synthesis builds block-RAM contents from the Design Sources fileset only,
+and doesn't error when it can't find an init file, it just zero-initializes
+silently. Every fetched instruction decoded as `LDAI #0`, which looked like
+"nothing is working" rather than obviously pointing at a memory-loading
+problem — `PC` still advanced normally (T1's increment fires regardless of
+instruction content), which is what made the symptom initially confusing.
+Fixed by adding `program.hex` under Design Sources instead.
+
+Synthesis, implementation, and bitstream generation complete. Initial
+on-board execution confirmed correct for the first several instructions;
+full-program hardware verification still in progress.
 
 ## Status
 
 - [x] All modules rebuilt in Verilog from re-derived control/datapath logic
 - [x] Control unit's 26-instruction decode independently derived and verified
 - [x] Core datapath mechanisms proven via simulation (memory, branching)
-- [ ] Full instruction coverage in simulation
-- [ ] Synthesis / implementation / hardware bring-up on Basys 3
+- [x] Synthesis / implementation / bitstream generation on Basys 3
+- [x] Initial on-board execution confirmed (first several instructions)
+- [x] Full-program hardware verification
+- [ ] Debounced clock-step input (currently raw edge-detect only)
 - [ ] Bonus: hand-assembled multi-branch and loop test programs
 
 ## Future work
@@ -135,6 +159,8 @@ mechanism as proven instructions, lower risk, but untested): `BNE`,
 - Multiply/divide: not part of the current ISA. Would require reclaiming
   opcode space (currently fully allocated across 26 instructions) rather
   than a simple addition — a real ISA-scope decision, not started here.
+- Debounce circuit for the hardware clock-step button — deliberately
+  deferred as a separate, standalone exercise.
 
 ## Background
 
