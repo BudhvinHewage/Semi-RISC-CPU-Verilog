@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.runs/synth_1/cpu.tcl"
+  variable script "C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.runs/synth_1/cpu_basys3_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -58,7 +58,9 @@ if {$::dispatch::connected} {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param general.usePosixSpawnForFork 1
-set_param synth.incrementalSynthesisCache C:/Users/budhv/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-20888-Nexus/incrSyn
+set_param chipscope.maxJobs 2
+set_param synth.incrementalSynthesisCache C:/Users/budhv/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-23256-Nexus/incrSyn
+set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -77,6 +79,7 @@ set_property ip_output_repo {c:/Users/budhv/Documents/Personal Projects/Semi RIS
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+read_mem {{C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/program.hex}}
 read_verilog -library xil_defaultlib {
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/ALU.v}
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/LZE.v}
@@ -87,16 +90,19 @@ read_verilog -library xil_defaultlib {
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/adder32.v}
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/adder4.v}
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v}
+  {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu.v}
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/data_mem.v}
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/data_path.v}
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/fulladd.v}
+  {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/instr_mem.v}
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/mux2to1.v}
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/mux4to1.v}
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/pc.v}
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/register1.v}
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/register32.v}
   {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/reset_circuit.v}
-  {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu.v}
+  {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/sseg_display.v}
+  {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu_basys3_top.v}
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -116,7 +122,7 @@ read_checkpoint -auto_incremental -incremental {C:/Users/budhv/Documents/Persona
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top cpu -part xc7a35tcpg236-1
+synth_design -top cpu_basys3_top -part xc7a35tcpg236-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -126,10 +132,10 @@ if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef cpu.dcp
+write_checkpoint -force -noxdef cpu_basys3_top.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-generate_parallel_reports -reports { "report_utilization -file cpu_utilization_synth.rpt -pb cpu_utilization_synth.pb"  } 
+generate_parallel_reports -reports { "report_utilization -file cpu_basys3_top_utilization_synth.rpt -pb cpu_basys3_top_utilization_synth.pb"  } 
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

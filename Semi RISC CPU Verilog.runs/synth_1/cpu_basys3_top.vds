@@ -1,0 +1,477 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite ENTERPRISE license has been detected. Your current license is active and will expire on 23-sep-2026.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Mon Aug 31 15:40:09 2026
+# Process ID         : 21584
+# Current directory  : C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.runs/synth_1
+# Command line       : vivado.exe -log cpu_basys3_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_basys3_top.tcl
+# Log file           : C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.runs/synth_1/cpu_basys3_top.vds
+# Journal file       : C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.runs/synth_1\vivado.jou
+# Running On         : Nexus
+# Platform           : Windows 11
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 7 9800X3D 8-Core Processor           
+# CPU Frequency      : 4691 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 8
+# Host memory        : 33408 MB
+# Swap memory        : 16642 MB
+# Total Virtual      : 50051 MB
+# Available Virtual  : 23339 MB
+#-----------------------------------------------------------
+source cpu_basys3_top.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental {C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/utils_1/imports/synth_1/control.dcp}
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/utils_1/imports/synth_1/control.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top cpu_basys3_top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-86] Your Synthesis license expires in 23 day(s)
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5008] Incremental synthesis strategy default
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 13856
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1350.199 ; gain = 577.168
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'cpu_basys3_top' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu_basys3_top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'instr_mem' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/instr_mem.v:3]
+INFO: [Synth 8-3876] $readmem data file 'program.hex' is read successfully [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/instr_mem.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'instr_mem' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/instr_mem.v:3]
+INFO: [Synth 8-6157] synthesizing module 'cpu' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu.v:3]
+INFO: [Synth 8-6157] synthesizing module 'data_path' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/data_path.v:3]
+INFO: [Synth 8-6157] synthesizing module 'register32' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/register32.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'register32' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/register32.v:3]
+INFO: [Synth 8-6157] synthesizing module 'LZE' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/LZE.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'LZE' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/LZE.v:3]
+INFO: [Synth 8-6157] synthesizing module 'pc' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/pc.v:3]
+INFO: [Synth 8-6157] synthesizing module 'add' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/add.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'add' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/add.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mux2to1' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/mux2to1.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'mux2to1' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/mux2to1.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'pc' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/pc.v:3]
+INFO: [Synth 8-6157] synthesizing module 'RED' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/RED.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'RED' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/RED.v:3]
+INFO: [Synth 8-6157] synthesizing module 'data_mem' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/data_mem.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/data_mem.v:3]
+INFO: [Synth 8-6157] synthesizing module 'UZE' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/UZE.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'UZE' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/UZE.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mux4to1' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/mux4to1.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'mux4to1' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/mux4to1.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/ALU.v:2]
+INFO: [Synth 8-6157] synthesizing module 'adder32' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/adder32.v:3]
+INFO: [Synth 8-6157] synthesizing module 'adder16' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/adder16.v:3]
+INFO: [Synth 8-6157] synthesizing module 'adder4' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/adder4.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fulladd' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/fulladd.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fulladd' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/fulladd.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'adder4' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/adder4.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'adder16' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/adder16.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'adder32' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/adder32.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/ALU.v:2]
+INFO: [Synth 8-6157] synthesizing module 'register1' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/register1.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'register1' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/register1.v:3]
+WARNING: [Synth 8-689] width (32) of port connection 'Q' does not match port width (1) of module 'register1' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/data_path.v:118]
+INFO: [Synth 8-6155] done synthesizing module 'data_path' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/data_path.v:3]
+WARNING: [Synth 8-689] width (1) of port connection 'out_c' does not match port width (32) of module 'data_path' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu.v:40]
+WARNING: [Synth 8-7071] port 'mem_out' of module 'data_path' is unconnected for instance 'dat' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu.v:31]
+WARNING: [Synth 8-7071] port 'mem_in' of module 'data_path' is unconnected for instance 'dat' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu.v:31]
+WARNING: [Synth 8-7071] port 'mem_addr' of module 'data_path' is unconnected for instance 'dat' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu.v:31]
+WARNING: [Synth 8-7023] instance 'dat' of module 'data_path' has 37 connections declared, but only 34 given [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu.v:31]
+INFO: [Synth 8-6157] synthesizing module 'control' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'control' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:3]
+INFO: [Synth 8-6157] synthesizing module 'reset_circuit' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/reset_circuit.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'reset_circuit' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/reset_circuit.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu.v:3]
+WARNING: [Synth 8-7071] port 'test_signal' of module 'cpu' is unconnected for instance 'cpu' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu_basys3_top.v:36]
+WARNING: [Synth 8-7023] instance 'cpu' of module 'cpu' has 17 connections declared, but only 16 given [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu_basys3_top.v:36]
+WARNING: [Synth 8-324] index 6 out of range [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu_basys3_top.v:61]
+INFO: [Synth 8-6157] synthesizing module 'sseg_display' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/sseg_display.v:3]
+INFO: [Synth 8-226] default block is never used [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/sseg_display.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'sseg_display' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/sseg_display.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_basys3_top' (0#1) [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu_basys3_top.v:3]
+WARNING: [Synth 8-3936] Found unconnected internal register 'display_value_reg' and it is trimmed from '32' to '16' bits. [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/cpu_basys3_top.v:55]
+WARNING: [Synth 8-7129] Port mclk in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[23] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[22] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[21] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[20] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[19] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[18] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[17] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[16] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[15] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[14] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[13] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[12] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[11] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[10] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[9] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[8] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[7] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[6] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[5] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[4] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[3] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[2] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[1] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[0] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[31] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[30] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[29] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[28] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[27] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[26] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[25] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[24] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[23] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[22] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[21] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[20] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[19] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[18] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[17] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LZE_in[16] in module LZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[31] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[30] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[29] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[28] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[27] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[26] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[25] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[24] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[23] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[22] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[21] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[20] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[19] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[18] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[17] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UZE_in[16] in module UZE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[31] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[30] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[29] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[28] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[27] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[26] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[25] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[24] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[23] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[22] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[21] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[20] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[19] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[18] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[17] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[16] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[15] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[14] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[13] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[12] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[11] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[10] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[9] in module RED is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RED_in[8] in module RED is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1474.156 ; gain = 701.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1474.156 ; gain = 701.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1474.156 ; gain = 701.125
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1474.156 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/budhv/Documents/Personal Projects/Verilog-8-Bit-CPU/8_Bit_CPU_Design.srcs/constrs_1/new/basys3.xdc]
+WARNING: [Vivado 12-584] No ports matched 'SW[6]'. [C:/Users/budhv/Documents/Personal Projects/Verilog-8-Bit-CPU/8_Bit_CPU_Design.srcs/constrs_1/new/basys3.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/budhv/Documents/Personal Projects/Verilog-8-Bit-CPU/8_Bit_CPU_Design.srcs/constrs_1/new/basys3.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[6]'. [C:/Users/budhv/Documents/Personal Projects/Verilog-8-Bit-CPU/8_Bit_CPU_Design.srcs/constrs_1/new/basys3.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/budhv/Documents/Personal Projects/Verilog-8-Bit-CPU/8_Bit_CPU_Design.srcs/constrs_1/new/basys3.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/budhv/Documents/Personal Projects/Verilog-8-Bit-CPU/8_Bit_CPU_Design.srcs/constrs_1/new/basys3.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/budhv/Documents/Personal Projects/Verilog-8-Bit-CPU/8_Bit_CPU_Design.srcs/constrs_1/new/basys3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cpu_basys3_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/cpu_basys3_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1549.578 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1550.410 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1550.410 ; gain = 777.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1550.410 ; gain = 777.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1550.410 ; gain = 777.379
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'present_state_reg' in module 'control'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 STATE_0 |                              001 |                               00
+                 STATE_1 |                              010 |                               01
+                  iSTATE |                              100 |                               10
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'present_state_reg' using encoding 'one-hot' in module 'control'
+WARNING: [Synth 8-327] inferring latch for variable 'a_mux_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:62]
+WARNING: [Synth 8-327] inferring latch for variable 'b_mux_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:62]
+WARNING: [Synth 8-327] inferring latch for variable 'im_mux1_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:62]
+WARNING: [Synth 8-327] inferring latch for variable 'reg_mux_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:63]
+WARNING: [Synth 8-327] inferring latch for variable 'im_mux2_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:62]
+WARNING: [Synth 8-327] inferring latch for variable 'data_mux_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:56]
+WARNING: [Synth 8-327] inferring latch for variable 'alu_op_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:63]
+WARNING: [Synth 8-327] inferring latch for variable 'inc_pc_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:58]
+WARNING: [Synth 8-327] inferring latch for variable 'ld_pc_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:58]
+WARNING: [Synth 8-327] inferring latch for variable 'clr_ir_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:57]
+WARNING: [Synth 8-327] inferring latch for variable 'ld_ir_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:57]
+WARNING: [Synth 8-327] inferring latch for variable 'clr_a_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:59]
+WARNING: [Synth 8-327] inferring latch for variable 'clr_b_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:59]
+WARNING: [Synth 8-327] inferring latch for variable 'clr_c_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:60]
+WARNING: [Synth 8-327] inferring latch for variable 'clr_z_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:60]
+WARNING: [Synth 8-327] inferring latch for variable 'ld_a_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:59]
+WARNING: [Synth 8-327] inferring latch for variable 'ld_b_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:59]
+WARNING: [Synth 8-327] inferring latch for variable 'ld_z_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:60]
+WARNING: [Synth 8-327] inferring latch for variable 'wen_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:61]
+WARNING: [Synth 8-327] inferring latch for variable 'en_reg' [C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.srcs/sources_1/new/control.v:61]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1550.410 ; gain = 777.379
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'cpu/dat/LZE_PC' (LZE) to 'cpu/dat/LZE_A_Mux'
+INFO: [Synth 8-223] decloning instance 'cpu/dat/LZE_PC' (LZE) to 'cpu/dat/LZE_B_Mux'
+INFO: [Synth 8-223] decloning instance 'cpu/dat/LZE_PC' (LZE) to 'cpu/dat/LZE_IM_MUX2'
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   3 Input      1 Bit         XORs := 64    
++---Registers : 
+	               32 Bit    Registers := 6     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---RAMs : 
+	               8K Bit	(256 X 32 bit)          RAMs := 1     
+	               2K Bit	(64 X 32 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 5     
+	   4 Input   32 Bit        Muxes := 2     
+	   4 Input    4 Bit        Muxes := 2     
+	   6 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 2     
+	   3 Input    3 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 4     
+	   8 Input    1 Bit        Muxes := 1     
+	  16 Input    1 Bit        Muxes := 1     
+	  12 Input    1 Bit        Muxes := 8     
+	   6 Input    1 Bit        Muxes := 4     
+	   4 Input    1 Bit        Muxes := 17    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (cpu/control_unit/clr_ir_reg) is unused and will be removed from module cpu_basys3_top.
+WARNING: [Synth 8-3332] Sequential element (cpu/control_unit/clr_c_reg) is unused and will be removed from module cpu_basys3_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1620.191 ; gain = 847.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++---------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name    | RTL Object                    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|instr_mem:     | mem_reg                       | 64 x 32(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
+|cpu_basys3_top | cpu/dat/Data_Mem0/DATAMEM_reg | 256 x 32(READ_FIRST)   | W |   | 256 x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++---------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1708.156 ; gain = 935.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1842.391 ; gain = 1069.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++---------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name    | RTL Object                    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|instr_mem:     | mem_reg                       | 64 x 32(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
+|cpu_basys3_top | cpu/dat/Data_Mem0/DATAMEM_reg | 256 x 32(READ_FIRST)   | W |   | 256 x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++---------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance imem/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance imem/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance cpu/dat/Data_Mem0/DATAMEM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1842.391 ; gain = 1069.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2036.105 ; gain = 1263.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2036.105 ; gain = 1263.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2036.105 ; gain = 1263.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2036.105 ; gain = 1263.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2038.043 ; gain = 1265.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2038.043 ; gain = 1265.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |CARRY4   |    13|
+|3     |LUT1     |     3|
+|4     |LUT2     |    46|
+|5     |LUT3     |   116|
+|6     |LUT4     |    42|
+|7     |LUT5     |    61|
+|8     |LUT6     |   284|
+|9     |MUXF7    |    26|
+|10    |RAMB18E1 |     2|
+|12    |FDCE     |    99|
+|13    |FDPE     |     1|
+|14    |FDRE     |    53|
+|15    |FDSE     |     1|
+|16    |LD       |    22|
+|17    |IBUF     |     9|
+|18    |OBUF     |    27|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2038.043 ; gain = 1265.012
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 2038.043 ; gain = 1188.758
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2038.043 ; gain = 1265.012
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2047.266 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 63 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 2 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2050.949 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 22 instances were transformed.
+  LD => LDCE: 22 instances
+
+Synth Design complete | Checksum: e665323e
+INFO: [Common 17-83] Releasing license: Synthesis
+77 Infos, 115 Warnings, 2 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2050.949 ; gain = 1456.000
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2050.949 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/budhv/Documents/Personal Projects/Semi RISC CPU Verilog/Semi RISC CPU Verilog.runs/synth_1/cpu_basys3_top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file cpu_basys3_top_utilization_synth.rpt -pb cpu_basys3_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Aug 31 15:40:44 2026...

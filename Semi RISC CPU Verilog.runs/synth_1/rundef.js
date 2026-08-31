@@ -24,7 +24,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log cpu.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu.tcl" );
+         "-log cpu_basys3_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_basys3_top.tcl" );
 
 
 

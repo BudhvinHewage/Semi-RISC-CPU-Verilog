@@ -22,6 +22,6 @@ module tb_cpu_top;
     initial begin
         clk = 0; mclk = 0; rst = 1;
         #40  rst = 0;
-        #800 $finish;
+        #2500 $finish;
     end
 endmodule
