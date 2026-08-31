@@ -15,7 +15,8 @@ module cpu(
     output [31:0] dout_pc,
     output [2:0]  out_t,
     output        wen_mem,
-    output        en_mem
+    output        en_mem,
+    output [31:0] dout_alu
 );
 
     wire dp_mux1, dp_clr_a, dp_ld_a, dp_clr_b, dp_ld_b, dp_clr_c, dp_ld_c;
@@ -42,7 +43,7 @@ module cpu(
         .data_mux_sel(data_mux_sig), .reg_mux_sel(reg_sel),
         .a_mux_sel(dp_mux_a), .b_mux_sel(dp_mux_b),
         .im_mux1_sel(dp_mux1), .im_mux2_sel(im_mux2_sig),
-        .alu_op(alu_op_sig)
+        .alu_op(alu_op_sig), .alu_out(dout_alu)
     );
 
     control control_unit (

@@ -1,0 +1,30 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../../../../../AMDDesignTools/2026.1/Vivado/data/rsb/busdef" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/ALU.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/LZE.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/RED.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/UZE.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/add.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/adder16.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/adder32.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/adder4.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/control.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/cpu.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/cpu_top_test.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/data_mem.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/data_path.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/fulladd.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/instr_mem.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/mux2to1.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/mux4to1.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/pc.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/register1.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/register32.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sources_1/new/reset_circuit.v" \
+"../../../../Semi RISC CPU Verilog.srcs/sim_1/new/tb_cpu_top.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

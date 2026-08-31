@@ -17,6 +17,7 @@ module data_path(
     input  [31:0] data_in,
     output [31:0] data_bus, mem_out, mem_in,
     output [7:0]  mem_addr,
+    output [31:0] alu_out,
     input  [1:0]  data_mux_sel,
     input         reg_mux_sel,
     input         a_mux_sel, b_mux_sel,
@@ -35,7 +36,7 @@ module data_path(
     wire [31:0] data_mem_out;
     wire [31:0] uze_im_mux1_out, im_mux1_out;
     wire [31:0] lze_im_mux2_out, im_mux2_out;
-    wire [31:0] alu_out;
+    wire [31:0] alu_out_s;
     wire        zero_flag, carry_flag;
     wire [31:0] out_pc_sig;
 
@@ -103,12 +104,12 @@ module data_path(
     // ---- ALU + bus mux ----
     ALU ALU0 (
         .a(im_mux1_out), .b(im_mux2_out), .op(alu_op),
-        .result(alu_out), .zero(zero_flag), .cout(carry_flag)
+        .result(alu_out_s), .zero(zero_flag), .cout(carry_flag)
     );
 
     mux4to1 DATA_MUX0 (
         .s(data_mux_sel),
-        .X1(data_in), .X2(data_mem_out), .X3(alu_out), .X4(32'd0),
+        .X1(data_in), .X2(data_mem_out), .X3(alu_out_s), .X4(32'd0),
         .f(data_bus_s)
     );
 
@@ -130,5 +131,6 @@ module data_path(
     assign mem_addr  = red_out_data_mem;
     assign mem_in    = reg_mux_out;
     assign mem_out   = data_mem_out;
+    assign alu_out   = alu_out_s;
 
 endmodule
